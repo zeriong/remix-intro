@@ -5,7 +5,7 @@
  */
 import { PassThrough } from "stream";
 import { isbot } from "isbot";
-import { EntryContext } from "@remix-run/node";
+import type { EntryContext } from "@remix-run/node";
 import { ServerStyleSheet } from "styled-components";
 import { RemixServer } from "@remix-run/react";
 import { renderToPipeableStream } from "react-dom/server";
@@ -28,9 +28,13 @@ export default async function handleRequest(
     const sheet = new ServerStyleSheet();
 
     const { pipe, abort } = renderToPipeableStream(
-      sheet.collectStyles(
-        <RemixServer context={remixContext} url={request.url} />
-      ) as ReactNode,
+      <>
+        {
+          sheet.collectStyles(
+            <RemixServer context={remixContext} url={request.url} />
+          ) as ReactNode
+        }
+      </>,
       {
         [callbackName]: () => {
           const body = new PassThrough({

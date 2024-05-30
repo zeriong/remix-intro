@@ -9,26 +9,31 @@
     "build:remix": "remix build",
     "dev": "run-p \"dev:*\"",
     "dev:css": "npm run generate:css -- --watch",
-    "dev:remix": "remix dev",
+    "dev:remix": "remix dev -c \"node server.mjs\"",
     "generate:css": "sass styles/:app/styles/",
     "lint": "eslint --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint .",
     "start": "remix-serve ./build/server/index.js",
     "typecheck": "tsc"
   },
   "dependencies": {
+    "@remix-run/css-bundle": "^2.9.2",
+    "@remix-run/express": "^2.9.2",
     "@remix-run/node": "^2.9.2",
     "@remix-run/react": "^2.9.2",
     "@remix-run/serve": "^2.9.2",
+    "express": "^4.19.2",
     "isbot": "^4.1.0",
+    "morgan": "^1.10.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "styled-components": "^5.3.11"
   },
   "devDependencies": {
-    "@types/styled-components": "^5.1.34",
     "@remix-run/dev": "^2.9.2",
+    "@remix-run/eslint-config": "^2.9.2",
     "@types/react": "^18.2.20",
     "@types/react-dom": "^18.2.7",
+    "@types/styled-components": "^5.1.34",
     "@typescript-eslint/eslint-plugin": "^6.7.4",
     "@typescript-eslint/parser": "^6.7.4",
     "eslint": "^8.38.0",
@@ -43,5 +48,6 @@
   },
   "engines": {
     "node": ">=20.0.0"
-  }
+  },
+  "packageManager": "yarn@4.1.0"
 }
