@@ -1,4 +1,4 @@
-node_modules
+../init-remix/node_modules
 
 /.cache
 /build
