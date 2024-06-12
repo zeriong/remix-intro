@@ -13,4 +13,12 @@ export default defineConfig({
     }),
     tsconfigPaths(),
   ],
+  define: {
+    global: {},
+  },
+
+  // vite port setting
+  server: {
+    port: 3000,
+  },
 });

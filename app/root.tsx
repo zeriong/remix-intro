@@ -8,14 +8,10 @@ import {
 
 import React from "react";
 
-import { cssBundleHref } from "@remix-run/css-bundle";
 import type { LinksFunction } from "@remix-run/node";
-import styles from "./tailwind.css?url";
+import styles from "./styles/global.css?url";
 
-export const links: LinksFunction = () => [
-  ...(cssBundleHref ? [{ rel: "stylesheet", href: cssBundleHref }] : []),
-  { rel: "stylesheet", href: styles },
-];
+export const links: LinksFunction = () => [{ rel: "stylesheet", href: styles }];
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -27,7 +23,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
-        <div className="text-2xl">하하ㅏ하하하하</div>
+        <div className="text-2xl text-blue-500">하하ㅏ하하하하</div>
         {children}
         <ScrollRestoration />
         <Scripts />
