@@ -5,6 +5,7 @@ export default {
   theme: {
     extend: {
       colors: {
+        "brand-500": "#84de8a",
         "brand-400": "#ACE1AF",
         "brand-300": "#B0EBB4",
         "brand-200": "#BFF6C3",

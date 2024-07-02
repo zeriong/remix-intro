@@ -11,7 +11,13 @@ import React from "react";
 import type { LinksFunction } from "@remix-run/node";
 import styles from "./styles/global.css?url";
 
-export const links: LinksFunction = () => [{ rel: "stylesheet", href: styles }];
+export const links: LinksFunction = () => [
+  { rel: "stylesheet", href: styles },
+  {
+    rel: "stylesheet",
+    href: "https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css",
+  },
+];
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
