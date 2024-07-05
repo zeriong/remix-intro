@@ -1,6 +1,8 @@
 import { Link } from "@remix-run/react";
+import { useUIStore } from "~/store/common";
 
 export default function Header() {
+  const { setIsOpenAide, isOpenAside } = useUIStore();
   return (
     <header className="flex justify-between items-center border-b border-brand-400 px-8 w-full h-[86px]">
       <Link to="/" className="text-4xl font-extrabold flex items-center w-fit">
@@ -9,8 +11,8 @@ export default function Header() {
       </Link>
       <button
         type="button"
-        className="rounded-md px-5 py-3 font-extrabold border-brand-400 text-[20px] hover:text-white hover:bg-brand-500
-            transition-all"
+        className="rounded-md px-5 py-3 font-extrabold border-brand-400 text-[20px] hover:text-white hover:bg-brand-500 transition-all"
+        onClick={() => setIsOpenAide(!isOpenAside)}
       >
         Menu
       </button>
