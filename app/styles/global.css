@@ -4,6 +4,6 @@
 @tailwind utilities;
 
 html {
-    color: #333;
     font-family: "Pretendard Variable", Pretendard, sans-serif;
+    @apply text-default-black
 }
