@@ -9,7 +9,7 @@ export default function Header() {
     console.log("path: ", location.pathname);
   }, []);
   return (
-    <header className="flex items-center border-b border-brand-400 px-8 w-full h-[86px]">
+    <header className="flex items-center border-b border-brand-400 px-8 w-full min-h-[86px]">
       <Link
         to="/"
         className="text-4xl font-extrabold flex items-center w-fit mr-14"
