@@ -1,25 +1,26 @@
 import ListBox, { ICustomList } from "~/common/components/ListBox";
 import { useState } from "react";
+import CalcBox from "~/common/components/CalcBox";
 
 export default function Index() {
-  const [selectList, setSelectList] = useState<ICustomList>({
+  const [category, setCategory] = useState<ICustomList>({
     value: 1,
-    name: "Tom Cook",
+    name: "Room Size",
   });
+
   return (
-    <div className="h-full">
+    <div className="m-auto bg-brand-400 p-4 w-[500px]">
       리스트박스...
       <ListBox
         list={[
-          { value: 1, name: "Tom Cook" },
-          { value: 2, name: "Wade Cooper" },
-          { value: 3, name: "Tanya Fox" },
-          { value: 4, name: "Arlene Mccoy" },
-          { value: 5, name: "Devon Webb" },
+          { value: 1, name: "Room Size" },
+          { value: 2, name: "Length" },
+          { value: 3, name: "Data" },
         ]}
-        setSelectState={setSelectList}
-        selectState={selectList}
+        setSelectState={setCategory}
+        selectState={category}
       />
+      <CalcBox />
     </div>
   );
 }

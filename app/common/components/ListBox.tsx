@@ -6,7 +6,7 @@ import {
 } from "@headlessui/react";
 import { CheckIcon, ChevronDownIcon } from "@heroicons/react/20/solid";
 import clsx from "clsx";
-import { Dispatch } from "react";
+import { Dispatch, useEffect, useState } from "react";
 
 export interface ICustomList {
   value: number | string;
@@ -53,7 +53,11 @@ const ListBox = ({ list, setSelectState, selectState }: ICustomListBox) => {
             value={item}
             className="group flex cursor-default items-center gap-2 rounded-lg py-1.5 px-3 select-none data-[focus]:bg-white/10"
           >
-            <CheckIcon className="invisible size-4 fill-white group-data-[selected]:visible" />
+            <CheckIcon
+              className={`size-4 fill-white ${
+                selectState.value === item.value ? "visible" : "invisible"
+              }`}
+            />
             <div className="text-sm/6 text-white">{item.name}</div>
           </ListboxOption>
         ))}
