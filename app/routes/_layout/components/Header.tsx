@@ -1,5 +1,4 @@
 import { Link, useLocation } from "@remix-run/react";
-import { useUIStore } from "~/store/common";
 import { HEADER_LIST } from "~/constants/header";
 import { useEffect } from "react";
 

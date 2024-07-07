@@ -7,3 +7,9 @@ html {
     font-family: "Pretendard Variable", Pretendard, sans-serif;
     @apply text-default-black
 }
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
