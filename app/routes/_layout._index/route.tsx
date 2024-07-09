@@ -5,7 +5,7 @@ import CalcBox from "~/common/components/CalcBox";
 export default function Index() {
   const [category, setCategory] = useState<ICustomList>({
     value: 1,
-    name: "Room Size",
+    name: "방 크기",
   });
 
   return (
