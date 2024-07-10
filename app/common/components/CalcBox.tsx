@@ -1,18 +1,13 @@
 import ListBox, { ICustomList } from "~/common/components/ListBox";
 import { useEffect, useState } from "react";
 
-interface IProps {
-  calcCategory: string;
-  calcCategoryList: ICustomList[];
-}
-
-const CalcBox = ({ calcCategory, calcCategoryList }: IProps) => {
+const CalcBox = ({ currentCategory }: { currentCategory: ICustomList }) => {
   // Deep Copy
-  const _calcCategoryList = JSON.parse(JSON.stringify(calcCategoryList));
+  const _calcCategoryList = JSON.parse(JSON.stringify(currentCategory));
 
   // origin && copy
-  const [originList, setOriginList] = useState(calcCategoryList[0]);
-  const [copyList, setCopyList] = useState(_calcCategoryList[0]);
+  const [originList, setOriginList] = useState(CONVERT_LIST[0]);
+  const [copyList, setCopyList] = useState(_calcCategoryList.list[1]);
 
   // calc category tween change effect
   useEffect(() => {
@@ -38,11 +33,7 @@ const CalcBox = ({ calcCategory, calcCategoryList }: IProps) => {
       <div className="my-auto p-4 w-[500px] h-[500px] rounded bg-white border-2 border-gray-50 shadow-md">
         <div className="flex gap-5">
           <ListBox
-            list={[
-              { value: 1, name: "방 크기" },
-              { value: 2, name: "길이" },
-              { value: 3, name: "데이터 크기" },
-            ]}
+            list={currentCategory.list}
             setSelectState={setOriginList}
             selectState={originList}
           />

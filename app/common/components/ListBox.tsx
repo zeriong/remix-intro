@@ -6,15 +6,16 @@ import {
 } from "@headlessui/react";
 import { CheckIcon, ChevronDownIcon } from "@heroicons/react/20/solid";
 import clsx from "clsx";
-import { Dispatch, useEffect, useState } from "react";
+import { Dispatch } from "react";
 
 export interface ICustomList {
   value: number | string;
   name: string;
+  list: { name: string }[];
 }
 
 interface ICustomListBox {
-  list: ICustomList[];
+  list: ICustomList;
   setSelectState: Dispatch<ICustomList>;
   selectState: ICustomList;
 }
